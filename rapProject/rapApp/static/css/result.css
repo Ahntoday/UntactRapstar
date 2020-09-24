@@ -125,3 +125,48 @@ body {
   text-align: center;
   color: #FFFFFF;
 }
+
+#controls{
+  display : flex;
+  justify-content: space-around;
+  align-items: center; 
+  width : 14%;
+  height : 10%;
+  /* border : solid 2px white; */
+}
+
+#recordButton{
+  height : 31px;
+  width : 65px;
+  color :red;
+  background-color : #f89a60;
+  border-radius: 5px;
+  border: solid 2px  white;
+  font-family : "kyobo";
+  font-size : 1rem;
+  font-weight: bold;
+}
+
+#pauseButton{
+  height : 31px;
+  width : 65px;
+  color :#0F1231;
+  background-color : #f89a60;
+  border-radius: 5px;
+  border: solid 2px white;
+  font-family : "kyobo";
+  font-size : 1rem;
+  /* font-weight: bold; */
+}
+
+#stopButton{
+  height : 31px;
+  width : 65px;
+  color :red;
+  background-color : #f89a60;
+  border-radius: 5px;
+  border: solid 2px white;
+  font-family : "kyobo";
+  font-size : 1rem;
+  font-weight: bold;
+}

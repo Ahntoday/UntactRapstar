@@ -141,3 +141,6 @@ body {
     font-weight: bold;
 }
 
+.no_show {
+    display: none;
+}

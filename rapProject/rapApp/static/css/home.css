@@ -138,3 +138,8 @@ body {
 .blank_2 {
   height: 10px;
 }
+
+button:disabled {
+  background-color: #707070;
+  color: white;
+}
