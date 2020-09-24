@@ -17,11 +17,11 @@ def choice(request):
         context = {}
         if "rapper_btn" in request.POST:
             ## User db에 없는 nickname이면 되돌아가기
-            user = User.objects.filter(nickname=request.POST["nickname"])
-            if len(user) == 0:
-                return redirect(home)
-            ## User db에 이미 녹음본이 있으면 redirect(wait)
-            print(user[0].rap)
+            # user = User.objects.filter(nickname=request.POST["nickname"])
+            # if len(user) == 0:
+            #     return redirect(home)
+            # ## User db에 이미 녹음본이 있으면 redirect(wait)
+            # print(user[0].rap)
             ## DB에서 비트, 가사 가져오기
             context["beats"] = Beat.objects.order_by("?").all()[:5]
 
