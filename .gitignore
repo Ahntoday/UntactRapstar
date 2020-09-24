@@ -9,6 +9,7 @@ MbtiProject/db.sqlite3
 **/migrations/**
 !**/migrations
 !**/migrations/__init__.py
+media/
 
 Pipfile
 Pipfile.lock
