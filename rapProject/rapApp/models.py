@@ -23,7 +23,7 @@ class Vote(models.Model):
 
 class User(models.Model):
     nickname =  models.CharField(max_length=120)
-    rap = models.CharField(max_length=120, null=True, blank=True)
+    rap = models.FileField(blank=True, null=True)
     image = models.TextField()
     def __str__(self):
         return self.nickname

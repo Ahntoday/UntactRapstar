@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Record</title>
     <link rel="stylesheet" href="{% static 'css/record.css' %}" />
-    <script type="text/javascript" src="{% static 'js/record.js' %}"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="mp3recorder.js"></script>
 </head>
 <div class="themeselection">
     <div class="suggest">테마를 골라보세요</div>
@@ -44,8 +45,26 @@
 <br />
 <div class=recordsection>
     <div class="suggest">녹음하기</div>
-    <img class="record" src="{% static 'source/record.png' %}" width=70px height=70px />
+    <img class="record" src="{% static 'source/record.png' %}"  width=70px height=70px />
 </div>
+
+
+<!-- ################################### -->
+<div id="controls">
+    <button id="recordButton">Record</button>
+    <button id="pauseButton" disabled>Pause</button>
+    <button id="stopButton" disabled>Stop</button>
+    <form action="{% url 'save' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+ </div>
+ <div id="formats">Format: start recording to see sample rate</div>
+   <p><strong>Recordings:</strong></p>
+   <ol id="recordingsList"></ol>
+ <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+   <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+   <script src="{% static 'js/record.js' %}"></script>
 </body>
 
 </html>
