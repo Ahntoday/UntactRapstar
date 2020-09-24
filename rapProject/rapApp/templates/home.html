@@ -22,12 +22,12 @@
             {% csrf_token %}
             <input class="input" name="nickname" placeholder="닉네임 입력" width="240px" height="50px">
             <br />
-            <button class="rapper_btn" name="rapper_btn" type="submit" disabled>래퍼로 참여</button>
+            <button class="rapper_btn" name="rapper_btn" type="submit" >래퍼로 참여</button>
             <div class="blank_2"></div>
-            <button class="audience_btn" name="audience_btn" type="submit" disabled>방청객으로 참여</button>
+            <button class="audience_btn" name="audience_btn" type="submit" >방청객으로 참여</button>
             <div class="blank_2"></div>
         </form>
-        <button class="result_btn" name="result_btn" onclick="window.location.href='{% url "result" %}'" disabled>결과
+        <button class="result_btn" name="result_btn" onclick="window.location.href='{% url "result" %}'">결과
             보기</button>
         <div class="mini_intro">투표시간이 종료되면 결과가 공개됩니다!</div>
     </div>
