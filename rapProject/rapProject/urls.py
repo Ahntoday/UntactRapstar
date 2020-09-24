@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from rapApp import views
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -24,4 +27,4 @@ urlpatterns = [
     path('main/', views.choice, name="main"),
     path('result/', views.result, name="result"),
     path('save/', views.saveRecord, name="save"),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
