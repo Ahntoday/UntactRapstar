@@ -24,7 +24,7 @@
     </div>
     <br />
     {% for lyric in lyrics %}
-    <div class="lyrics no_show" id='lyric{{lyric.pk}}'>{{lyric.lines}}</div>
+    <div class="lyrics no_show" id='lyric{{lyric.pk}}' style="overflow-y: scroll;">{{lyric.lines}}</div>
     {% endfor %}
     <br />
     <br />
