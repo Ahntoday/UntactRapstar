@@ -9,56 +9,61 @@
     <link rel="stylesheet" href="{% static 'css/record.css' %}" />
 
 </head>
-<div class="themeselection">
-    <div class="suggest">테마를 골라보세요</div>
-    <br />
-    <div class="themes">
-        {% for lyric in lyrics%}
-            <button type="button" class="theme" onclick = "showLyric('#lyric{{lyric.pk}}')">{{lyric.subject}}</button>
-        {% endfor %}
+
+<body>
+    <div class="themeselection">
+        <div class="suggest">테마를 골라보세요</div>
+        <br />
+        <div class="themes">
+            {% for lyric in lyrics%}
+            <button type="button" class="theme" onclick="showLyric('#lyric{{lyric.pk}}')">{{lyric.subject}}</button>
+            {% endfor %}
+        </div>
     </div>
-</div>
-<br />
-{% for lyric in lyrics %}
+    <br />
+    {% for lyric in lyrics %}
     <div class="lyrics no_show" id='lyric{{lyric.pk}}'>{{lyric.lines}}</div>
-{% endfor %}
-<br />
-<br />
-<div class="beatselection">
-    <div class="suggest">비트를 골라보세요</div>
+    {% endfor %}
     <br />
-    <div class="beats">
-        <!-- db에서 갖고 올 것 -->
-        {% for beat in beats %}
+    <br />
+    <div class="beatselection">
+        <div class="suggest">비트를 골라보세요</div>
+        <br />
+        <div class="beats">
+            <!-- db에서 갖고 올 것 -->
+            {% for beat in beats %}
             <audio id='{{beat.beat_title}}' src="{{ beat.beat_file.url }}"></audio>
-            <button type="button" onclick="play('{{beat.beat_title}}')" class="beataudio">{{beat.beat_title}} <br /> {{beat.beat_producer}}</button>
-        {% endfor %}
+            <button type="button" onclick="play('{{beat.beat_title}}')" class="beataudio">{{beat.beat_title}} <br />
+                {{beat.beat_producer}}</button>
+            {% endfor %}
+        </div>
     </div>
-</div>
-<br />
-<br />
-<br />
-<div class=recordsection>
-    <div class="suggest">녹음하기</div>
-    <img class="record" src="{% static 'source/record.png' %}"  width=70px height=70px />
-</div>
+    <br />
+    <br />
+    <br />
+    <div class=recordsection>
+        <div class="suggest">녹음하기</div>
+        <img class="record" src="{% static 'source/record.png' %}" width=70px height=70px />
+    </div>
 
 
-<!-- ################################### -->
-<div id="controls">
-    <button id="recordButton">Record</button>
-    <button id="pauseButton" disabled>Pause</button>
-    <button id="stopButton" disabled>Stop</button>
-    <form action="{% url 'save' %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
- </div>
- <div id="formats"></div>
-   <ol id="recordingsList"></ol>
- <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
-   <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
-   <script src="{% static 'js/record.js' %}"></script>
+    <!-- ################################### -->
+    <div class="bottom">
+        <div id="controls">
+            <button id="recordButton">Record</button>
+            <button id="pauseButton" disabled>Pause</button>
+            <button id="stopButton" disabled>Stop</button>
+            <form action="{% url 'save' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="fileToUpload" id="fileToUpload">
+                <input type="submit" value="Upload Image" name="submit">
+        </div>
+        <div id="formats"></div>
+        <ol id="recordingsList"></ol>
+    </div>
+    <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script src="{% static 'js/record.js' %}"></script>
 </body>
 
 </html>
