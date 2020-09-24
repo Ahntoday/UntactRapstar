@@ -7,7 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>언택트 랩스타</title>
     <link rel="stylesheet" href="{% static 'css/vote.css' %}" />
-
+    <script>
+        function play(id) { 
+            var audios = document.querySelectorAll('audio');
+            var audio = document.getElementById(id); 
+            console.log(audio)
+            if (audio.paused) { 
+                for(var i=0;i<audios.length;i++){
+                    audios[i].pause();
+                }
+                audio.play(); 
+            }else{ 
+                audio.pause(); 
+                audio.currentTime = 0 
+            } 
+        } 
+    </script>
 </head>
 
 <body>
@@ -28,7 +43,8 @@
                     <div class="rapstar{{rapper.pk}}">
                         <img class="profile" src="{{rapper.image}}" width=100px height=100px/>
                         <p>{{rapper.nickname}}</p>
-                        <img class="play" src="{% static 'source/record.png' %}" width=50px height=50px />
+                        <audio id='{{rapper.pk}}' src="{{rapper.rap.url}}"></audio>
+                        <img class="play" src="{% static 'source/record.png' %}" onclick="play('{{rapper.pk}}')" width=50px height=50px />
                         <br />
                         <label class="pick"><input type="radio" name="rapstar" value="{{rapper.pk}}"></label>
                     </div>

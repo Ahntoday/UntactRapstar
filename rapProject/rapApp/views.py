@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Beat, User, Vote
+from django.core.files.storage import FileSystemStorage
+
 
 # Create your views here.
 def home(request):
@@ -19,6 +21,7 @@ def choice(request):
         if "audience_btn" in request.POST:
             ## User DB 가져올 것
             context["rappers"] = User.objects.all()
+            print(context)
             return render(request, "vote.html", context)
 
 def wait(request):
@@ -43,5 +46,10 @@ def result(request):
 
 def saveRecord(request):
     ## User DB update
-    print(request.POST)
-    return render()
+    if request.POST:
+        myfile = request.FILES['fileToUpload']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        uploaded_file_url = fs.url(filename)
+        User.objects.filter(nickname="광인사 Dell루나").update(rap=filename)
+    return redirect(wait)
