@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Beat, User, Vote, Lyrics
 from django.core.files.storage import FileSystemStorage
+import datetime
 
 
 # Create your views here.
@@ -51,6 +52,7 @@ def wait(request):
 def result(request):
     ## DB에서 vote table 참가자마다 count
     ## count 가장 높은 참가자가 우승자
+
     context = {}
     winner = ""
     max_count = 0
@@ -61,7 +63,7 @@ def result(request):
             max_count = count
             winner = rap.nickname
     context["winner"] = winner
-    context["count"] = count
+    context["count"] = max_count
     return render(request, "result.html", context)
 
 def saveRecord(request):
