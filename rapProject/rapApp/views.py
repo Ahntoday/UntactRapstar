@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Beat, User, Vote
+from .models import Beat, User, Vote, Lyrics
 from django.core.files.storage import FileSystemStorage
 
 
@@ -11,21 +11,41 @@ def home(request):
 def choice(request):
     ## nickname 있으면 session에다가 저장
     if request.POST:
+        if "nickname" in request.POST:
+            request.session["nickname"] = request.POST["nickname"]
         context = {}
         if "rapper_btn" in request.POST:
             ## User db에 없는 nickname이면 되돌아가기
-            ## User db에 이미 녹음본이 있으면 redirect(result)
+            user = User.objects.filter(nickname=request.POST["nickname"])
+            if len(user) == 0:
+                return redirect(home)
+            ## User db에 이미 녹음본이 있으면 redirect(wait)
+            print(user[0].rap)
             ## DB에서 비트, 가사 가져오기
             context["beats"] = Beat.objects.order_by("?").all()[:5]
+
+            context["lyrics"] = Lyrics.objects.order_by("?").all()[:5]
             return render(request, "record.html", context)
         if "audience_btn" in request.POST:
+            user = Vote.objects.filter(user=request.POST["nickname"])
+            print(user)
+            if len(user) != 0:
+                return redirect(wait)
             ## User DB 가져올 것
             context["rappers"] = User.objects.all()
-            print(context)
             return render(request, "vote.html", context)
+    return redirect(home)
 
 def wait(request):
     # 여기서 뽑은 애 DB에 저장
+    if request.POST:
+        print(request.POST)
+        if("rapstar" in request.POST):
+            vote = User.objects.get(pk=request.POST["rapstar"][0])
+            Vote.objects.create(
+                user = request.session["nickname"],
+                vote = vote
+            )
     return render(request, "result_wait.html")
 
 def result(request):
@@ -51,5 +71,5 @@ def saveRecord(request):
         fs = FileSystemStorage()
         filename = fs.save(myfile.name, myfile)
         uploaded_file_url = fs.url(filename)
-        User.objects.filter(nickname="광인사 Dell루나").update(rap=filename)
+        User.objects.filter(nickname=request.session["nickname"]).update(rap=filename)
     return redirect(wait)

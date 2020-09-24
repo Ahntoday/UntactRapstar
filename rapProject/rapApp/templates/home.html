@@ -18,7 +18,7 @@
         <br />
         <div class="mini_intro">활동할 닉네임을 입력해주세요!</div>
         <div class="blank_2"></div>
-        <form class="main_form" method="POST" action="{% url 'main' %}">
+        <form class="main_form" method="POST" action="{% url 'main' %}" onsubmit="return isValidSubmit();">
             {% csrf_token %}
             <input class="input" name="nickname" placeholder="닉네임 입력" width="240px" height="50px">
             <br />
@@ -32,6 +32,7 @@
         <div class="mini_intro">투표시간이 종료되면 결과가 공개됩니다!</div>
     </div>
 
+    <script type="text/javascript" src="{% static 'js/home.js' %}"></script>
 </body>
 
 </html>
