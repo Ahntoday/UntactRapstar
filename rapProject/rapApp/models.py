@@ -23,9 +23,7 @@ class Vote(models.Model):
 
 class User(models.Model):
     nickname =  models.CharField(max_length=120)
-    lyrics = models.ForeignKey("Lyrics", on_delete=models.CASCADE, related_name='lyrics')
-    beat = models.ForeignKey("Beat", on_delete=models.CASCADE, related_name='beat')
-    rap = models.CharField(max_length=120)
+    rap = models.CharField(max_length=120, null=True, blank=True)
     image = models.TextField()
     def __str__(self):
         return self.nickname

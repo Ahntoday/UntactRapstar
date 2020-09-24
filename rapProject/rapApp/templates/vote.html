@@ -24,34 +24,16 @@
             {% csrf_token %}
             <div class="candidate">
                 <!-- DB for 문 돌리기 -->
-                <div class="rapstar1">
-                    <img class="profile" src="../source/profile.jpg" />
-                    <p>광인사 Dell루나</p>
-                    <img class="play" src="../source/play.png" width=50px height=50px />
-                    <br />
-                    <label class="pick"><input type="radio" name="rapstar" value="rapstar1"></label>
-                </div>
-                <div class="rapstar2">
-                    <img class="profile" src="../source/profile.jpg" />
-                    <p>랩하고 노래해 한마리 사자처럼</p>
-                    <img class="play" src="../source/play.png" width=50px height=50px />
-                    <br />
-                    <label class="pick"><input type="radio" name="rapstar" value="rapstar2"></label>
-                </div>
-                <div class="rapstar3">
-                    <img class="profile" src="../source/profile.jpg" />
-                    <p>인공지능 랩소디</p>
-                    <img class="play" src="../source/play.png" width=50px height=50px />
-                    <br />
-                    <label class="pick"><input type="radio" name="rapstar" value="rapstar3"></label>
-                </div>
-                <div class="rapstar4">
-                    <img class="profile" src="../source/profile.jpg" />
-                    <p>리듬을 쳐줘요 대촌동 타자기</p>
-                    <img class="play" src="../source/play.png" width=50px height=50px />
-                    <br />
-                    <label class="pick"><input type="radio" name="rapstar" value="rapstar4"></label>
-                </div>
+                {% for rapper in rappers %}
+                    <div class="rapstar{{rapper.pk}}">
+                        <img class="profile" src="{{rapper.image}}" width=100px height=100px/>
+                        <p>{{rapper.nickname}}</p>
+                        <img class="play" src="{% static 'source/record.png' %}" width=50px height=50px />
+                        <br />
+                        <label class="pick"><input type="radio" name="rapstar" value="{{rapper.pk}}"></label>
+                    </div>
+                {% endfor %}
+                
             </div>
             <br />
             <div class="ToVote">

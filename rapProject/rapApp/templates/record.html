@@ -33,10 +33,10 @@
     <br />
     <div class="beats">
         <!-- db에서 갖고 올 것 -->
-        <audio id='beat_play' src="{% static 'source/beat.mp3' %}"></audio>
-        <button type="button" onclick="play()" class="beataudio">"SEÑORITA" <br /> (Prod. COLDE$T)</button>
-        <audio id='beat_play' src="{% static 'source/beat.mp3' %}"></audio>
-        <button type="button" onclick="play()" class="beataudio">"SEÑORITA" <br /> (Prod. COLDE$T)</button>
+        {% for beat in beats %}
+            <audio id='{{beat.beat_title}}' src="{{ beat.beat_file.url }}"></audio>
+            <button type="button" onclick="play('{{beat.beat_title}}')" class="beataudio">{{beat.beat_title}} <br /> {{beat.beat_producer}}</button>
+        {% endfor %}
     </div>
 </div>
 <br />
