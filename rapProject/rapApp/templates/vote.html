@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>언택트 랩스타</title>
+    <link rel="stylesheet" href="{% static 'css/vote.css' %}" />
+
+</head>
+
+<body>
+    <div class="blank_2"></div>
+    <img class="main_logo" src="{% static 'source/mainlogo.png' %}" width="220px" height="80px" />
+    <div class="main_container">
+        <div class="blank_2"></div>
+        <div class="countdown">
+            <span class="countdown_txt">결과발표까지</span>
+            <span id="limit"></span>
+            <span class="countdown_txt">남았습니다</span>
+        </div>
+        <form method="POST" action="{% url 'wait' %}">
+            {% csrf_token %}
+            <div class="candidate">
+                <!-- DB for 문 돌리기 -->
+                {% for rapper in rappers %}
+                    <div class="rapstar{{rapper.pk}}">
+                        <img class="profile" src="{{rapper.image}}" width=100px height=100px/>
+                        <p>{{rapper.nickname}}</p>
+                        <img class="play" src="{% static 'source/record.png' %}" width=50px height=50px />
+                        <br />
+                        <label class="pick"><input type="radio" name="rapstar" value="{{rapper.pk}}"></label>
+                    </div>
+                {% endfor %}
+                
+            </div>
+            <br />
+            <div class="ToVote">
+                <button class="votebtn" type="submit"> 투표하기</button>
+            </div>
+        </form>
+
+    </div>
+    <script type="text/javascript" src="{% static 'js/countdown.js' %}"></script>
+    <script type="text/javascript"> window.history.forward(); function noBack() { window.history.forword(); }</script>
+</body>
+
+</html>

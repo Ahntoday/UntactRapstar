@@ -1,0 +1,159 @@
+
+@font-face {
+    font-family : "kyobo";
+    src:url("../fonts/Kyobo\ Handwriting\ 2019.ttf")format("truetype");
+}
+
+@font-face {
+    font-family : "Nexon_B";
+    src:url("../fonts/NEXONLv1GothicBold.ttf")format("truetype");
+}
+
+@font-face {
+    font-family : "Nexon_L";
+    src:url("../fonts/NEXONLv1GothicLight.ttf")format("truetype");
+}
+
+body {
+    display: flex;
+    height: 95vh;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: #0F1231;
+
+}
+
+.main_container {
+    /* width : 80%;
+    height : 80%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border : solid 2px red; */
+}
+
+.top {
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.candidate {
+    width : 850px;
+    height : 400px;
+    display : flex;
+    align-items : center;
+    justify-content: center;
+    /* border : solid 2px red;   */
+    font-size : 1.2rem;
+}
+
+.rapstar1 {
+    width : 25%;
+    display : flex;
+    flex-direction : column;
+    align-items : center;    
+    /* border : solid 2px white;  */
+}
+
+.rapstar2 {
+    width : 25%;
+    display : flex;
+    flex-direction : column;
+    align-items : center;    
+    /* border : solid 2px white;  */
+}
+
+.rapstar3 {
+    width : 25%;
+    display : flex;
+    flex-direction : column;
+    align-items : center;    
+    /* border : solid 2px white;  */
+}
+
+.rapstar4 {
+    width : 25%;
+    display : flex;
+    flex-direction : column;
+    align-items : center;    
+    /* border : solid 2px white;  */
+}
+
+p{
+    color : white;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    font-family : "kyobo";
+
+
+}
+.pick {
+    display : flex;
+    justify-content : center;
+    align-items : center; 
+    color : white;
+    font-family : "kyobo";
+}
+
+.profile {
+    align-items : center;
+    border-radius : 70%;
+    
+}
+
+.ToVote {
+    display : flex;
+    /* border : solid 2px black; */
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.votebtn {
+    width: 130px;
+    height: 40px;
+    border-radius: 30px;
+    border-color: #3FD6B8;
+    background-color: #d060ed;
+    font-family: "Nexon_B";
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+}
+
+.countdown_txt {
+    font-family: "Nexon_L";
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0.4px;
+    text-align: center;
+    color: #e3e3e3;
+}
+
+#limit {
+    font-family: "Nexon_L";
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0.4px;
+    text-align: center;
+    color: violet;
+}
+
+.blank_2 {
+    height: 44px;
+}
