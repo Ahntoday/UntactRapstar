@@ -1,0 +1,140 @@
+@font-face{
+  font-family : "Nexon";
+  src : url("../fonts/NEXONLv1GothicRegular.ttf") format('truetype');
+}
+
+@font-face{
+  font-family : "Nexon_B";
+  src : url("../fonts/NEXONLv1GothicBold.ttf") format('truetype');
+}
+
+@font-face{
+  font-family : "Uhbee";
+  src : url("../fonts/UhBee\ QUEEN\ J.ttf") format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+body {
+  height: 100vh;
+  background-color: #0f1231;
+  display: flex;
+  flex-direction: column;
+}
+
+.blank {
+  height: 70px;
+}
+
+.main_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.main_intro{
+  width: 515px;
+  height: 28px;
+  font-family: "Nexon";
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: 0.24px;
+  text-align: center;
+  color: #c7c7c7;
+}
+
+.mini_intro {
+  width: 266px;
+  height: 20px;
+  font-family: "Uhbee";
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.81;
+  letter-spacing: 0.16px;
+  text-align: center;
+  color: #e3e3e3;
+}
+
+.main_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  width: 180px;
+  height: 50px;
+  border-radius: 34px;
+  border: solid 1px #707070;
+  background-color: #ffffff;
+  font-family: "Nexon";
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.rapper_btn {
+  width: 240px;
+  height: 60px;
+  border-radius: 30px;
+  border: none;
+  background-color: #d060ed;
+  font-family: "Nexon_B";
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
+
+.audience_btn {
+  width: 240px;
+  height: 60px;
+  border-radius: 30px;
+  border: none;
+  background-color: #3fd6b8;
+  font-family: "Nexon_B";
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: 0.24px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.result_btn {
+  width: 240px;
+  height: 60px;
+  border-radius: 30px;
+  border: none;
+  background-color: #f89a60;
+  font-family: "Nexon_B";
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: 0.24px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.blank_2 {
+  height: 10px;
+}

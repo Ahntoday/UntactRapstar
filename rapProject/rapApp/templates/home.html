@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>언택트 랩스타</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
+</head>
+<!-- js로 form 전송될 때 닉네임 없으면 alert로 못 가게 해야함 -->
+<body>
+    <div class="blank"></div>
+    <div class="main_container">
+        <img class="main_logo" src="{% static 'source/mainlogo.png' %}" width="600px" height="230px" />
+        <div class="main_intro"> 시를 랩으로, <br /> AI와 함께하는 최고의 음유시인 래퍼 경연대회 </div>
+        <br />
+        <br />
+        <div class="mini_intro">활동할 닉네임을 입력해주세요!</div>
+        <div class="blank_2"></div>
+        <form class="main_form" method="POST" action="{% url 'main' %}">
+            {% csrf_token %}
+            <input class="input" name="nickname" placeholder="닉네임 입력" width="240px" height="50px">
+            <br />
+            <button class="rapper_btn" name="rapper_btn" type="submit">래퍼로 참여</button>
+            <div class="blank_2"></div>
+            <button class="audience_btn" name="audience_btn" type="submit">방청객으로 참여</button>
+            <div class="blank_2"></div>
+        </form>
+        <button class="result_btn" name="result_btn" onclick="window.location.href='{% url "result" %}'">결과
+            보기</button>
+        <div class="mini_intro">투표시간이 종료되면 결과가 공개됩니다!</div>
+    </div>
+
+</body>
+
+</html>

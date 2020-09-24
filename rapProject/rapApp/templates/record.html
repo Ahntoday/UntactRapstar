@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record</title>
+    <link rel="stylesheet" href="{% static 'css/record.css' %}" />
+    <script type="text/javascript" src="{% static 'js/record.js' %}"></script>
+</head>
+<div class="themeselection">
+    <div class="suggest">테마를 골라보세요</div>
+    <br />
+    <div class="themes">
+        <button type="button" class="theme">theme1</button>
+        <button type="button" class="theme">theme2</button>
+        <button type="button" class="theme">theme3</button>
+        <button type="button" class="theme">theme4</button>
+        <button type="button" class="theme">theme5</button>
+    </div>
+</div>
+<br />
+<div class=lyrics>숱하게 스쳐간<br />
+    감정들에 무뎌지는 감각<br />
+    언제부턴가 익숙해져버린<br />
+    마음을 숨기는 법들
+</div>
+<br />
+<br />
+<div class="beatselection">
+    <div class="suggest">비트를 골라보세요</div>
+    <br />
+    <div class="beats">
+        <!-- db에서 갖고 올 것 -->
+        <audio id='beat_play' src="{% static 'source/beat.mp3' %}"></audio>
+        <button type="button" onclick="play()" class="beataudio">"SEÑORITA" <br /> (Prod. COLDE$T)</button>
+        <audio id='beat_play' src="{% static 'source/beat.mp3' %}"></audio>
+        <button type="button" onclick="play()" class="beataudio">"SEÑORITA" <br /> (Prod. COLDE$T)</button>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<div class=recordsection>
+    <div class="suggest">녹음하기</div>
+    <img class="record" src="{% static 'source/record.png' %}" width=70px height=70px />
+</div>
+</body>
+
+</html>

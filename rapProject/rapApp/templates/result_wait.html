@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>언택트 랩스타</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/result_wait.css' %}" />
+</head>
+
+<body>
+    <div class="main_container">
+        <div class="blank_2"></div>
+        <img class="main_logo" src="{% static 'source/mainlogo.png' %}" width="220px" height="80px" />
+        <div class="blank"></div>
+        <img class="loading" src="{% static 'source/loading.gif' %}" width="200px" height="160px" />
+        <div class="main_intro">투표 진행중</div>
+        <div class="main_msg">
+            누가 언택트 랩스타일까요?
+            <br />
+            조금만 기다려주세요💜
+        </div>
+        <div class="blank_2"></div>
+        <div class="countdown">
+            <div class="countdown_txt">결과발표까지</div>
+            <div id="limit"></div>
+            <div class="countdown_txt">남았습니다</div>
+        </div>
+    </div>
+    <script type="text/javascript" src="{% static 'js/countdown.js' %}"></script>
+</body>
+
+</html>

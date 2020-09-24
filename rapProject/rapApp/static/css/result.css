@@ -1,0 +1,127 @@
+@font-face{
+  font-family : "Nexon";
+  src : url("../fonts/NEXONLv1GothicRegular.ttf") format('truetype');
+}
+
+@font-face{
+  font-family : "Nexon_B";
+  src : url("../fonts/NEXONLv1GothicBold.ttf") format('truetype');
+}
+
+@font-face{
+  font-family : "Uhbee";
+  src : url("../fonts/UhBee\ QUEEN\ J.ttf") format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+body {
+  height: 100vh;
+  /* background-color: #0f1231; */
+  background-image: url("../source/result_bg.png");
+  display: flex;
+  flex-direction: column;
+}
+
+.blank {
+  height: 10px;
+}
+
+.blank_2 {
+  height: 44px;
+}
+
+.main_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.gold_container {
+  background-image: url("../source/goldframe.png");
+  background-size: 100% 100%;
+  width: 400px;
+  height: 540px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Nexon_B";
+}
+
+.winner_txt {
+  width: 242px;
+  height: 46px;
+  font-family: "Nexon_B";
+  font-size: 32px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.4px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.winner_intro {
+  height: 30px;
+  font-family: "Uhbee";
+  font-size: 10px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.4px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.winner_name {
+  width: 100px;
+  height: 46px;
+  font-family: "Nexon";
+  font-size: 32px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.4px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.congraturation_msg {
+  width: 320px;
+  height: 100px;
+  font-family: "Nexon";
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.76;
+  letter-spacing: 0.34px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.return_btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 36px;
+  border: solid 2px gold;
+  background-color: #D060ED;
+  font-family: "Nexon_B";
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: 0.24px;
+  text-align: center;
+  color: #FFFFFF;
+}

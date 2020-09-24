@@ -1,0 +1,124 @@
+@font-face {
+    font-family : "kyobo";
+    src:url("../fonts/Kyobo\ Handwriting\ 2019.ttf")format("truetype");
+}
+
+@font-face {
+    font-family : "Nexon_B";
+    src:url("../fonts/NEXONLv1GothicBold.ttf")format("truetype");
+}
+
+@font-face {
+    font-family : "Nexon_L";
+    src:url("../fonts/NEXONLv1GothicLight.ttf")format("truetype");
+}
+
+body {
+    display: flex;
+    height: 95vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0F1231;
+
+}
+
+.main_container {
+    /* width : 80%;
+    height : 80%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border : solid 2px red; */
+}
+
+.rapper {
+    width : 850px;
+    height : 400px;
+    display : flex;
+    align-items : center;
+    justify-content: center;
+    /* border : solid 2px red;   */
+    font-size : 1.2rem;
+}
+
+.rapstar1 {
+    width : 25%;
+    display : flex;
+    flex-direction : column;
+    align-items : center;    
+    /* border : solid 2px white;  */
+}
+
+.rapstar2 {
+    width : 25%;
+    display : flex;
+    flex-direction : column;
+    align-items : center;    
+    /* border : solid 2px white;  */
+}
+
+.rapstar3 {
+    width : 25%;
+    display : flex;
+    flex-direction : column;
+    align-items : center;    
+    /* border : solid 2px white;  */
+}
+
+.rapstar4 {
+    width : 25%;
+    display : flex;
+    flex-direction : column;
+    align-items : center;    
+    /* border : solid 2px white;  */
+}
+
+.rapper_name{
+    color : white;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    font-family : "kyobo";
+
+
+}
+.pick {
+    display : flex;
+    justify-content : center;
+    align-items : center; 
+    color : white;
+    font-family : "kyobo";
+}
+
+.rapper_img {
+    align-items : center;
+    border-radius : 70%;
+    
+}
+
+.ToSubmit {
+    display : flex;
+    /* border : solid 2px black; */
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.submitbtn {
+    width: 130px;
+    height: 40px;
+    border-radius: 30px;
+    border-color: #3FD6B8;
+    background-color: #d060ed;
+    font-family: "Nexon_B";
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+}

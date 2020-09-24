@@ -1,0 +1,98 @@
+@font-face {
+    font-family : "kyobo";
+    src:url("../fonts/Kyobo\ Handwriting\ 2019.ttf")format("truetype");
+}
+
+body {
+    display: flex;
+    height: 95vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0F1231;
+}
+
+.suggest{
+    color : white;
+    font-family : "kyobo";
+    font-size : 2rem;
+}
+
+.themeselection {
+    width : 30%;
+    height : 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    /* border : solid 2px white; */
+
+}
+
+.themes{
+    width : 90%;
+    height : 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border : solid 2px red; */
+}
+
+.theme{
+    height : 100%;
+    color :#0F1231;
+    background-color : #34E6C3;
+    border-radius: 20px;
+    border: solid 2px white;
+    font-family : "kyobo";
+
+}
+
+.lyrics{
+    width : 20%;
+    height : 20%;
+    color : white;
+    border : solid 2px white;
+    font-family : "kyobo";
+    font-size : 1.5rem;
+    text-align : center; 
+    display : flex;
+    align-items : center;
+    justify-content : center;
+}
+
+.beatselection {
+    width : 50%;
+    height : 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    /* border : solid 2px white; */
+}
+
+.beats{
+    width : 90%;
+    height : 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border : solid 2px red; */
+}
+
+.beataudio{
+   height : 100%;
+   color : white;
+   background-color: #e040fb;
+   border-radius: 20px;
+   border: solid 2px white;
+   font-family : "kyobo";
+}
+
+.recordsection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+

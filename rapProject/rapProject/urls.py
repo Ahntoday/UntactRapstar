@@ -26,5 +26,6 @@ urlpatterns = [
     path('', views.home, name="home"),
     path('main/', views.choice, name="main"),
     path('result/', views.result, name="result"),
+    path('wait/', views.wait, name="wait"),
     path('save/', views.saveRecord, name="save"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
