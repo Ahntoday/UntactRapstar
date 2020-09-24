@@ -2,7 +2,10 @@ from django.shortcuts import render, redirect
 from .models import Beat, User, Vote, Lyrics
 from django.core.files.storage import FileSystemStorage
 import datetime
+from .new import total_work
+import pandas as pd
 
+total_train = pd.read_csv('rapApp/total_poem.csv')
 
 # Create your views here.
 def home(request):
@@ -17,15 +20,16 @@ def choice(request):
         context = {}
         if "rapper_btn" in request.POST:
             ## User db에 없는 nickname이면 되돌아가기
-            # user = User.objects.filter(nickname=request.POST["nickname"])
-            # if len(user) == 0:
-            #     return redirect(home)
-            # ## User db에 이미 녹음본이 있으면 redirect(wait)
-            # print(user[0].rap)
+            user = User.objects.filter(nickname=request.POST["nickname"])
+            if len(user) == 0:
+                return redirect(home)
             ## DB에서 비트, 가사 가져오기
             context["beats"] = Beat.objects.order_by("?").all()[:5]
-
-            context["lyrics"] = Lyrics.objects.order_by("?").all()[:5]
+            lyrics = []
+            for i in range(5):
+                lyrics.append({"pk": i+1, "lines":" ".join(total_work(total_train))})
+            context["lyrics"] = lyrics
+            print(context["lyrics"])
             return render(request, "record.html", context)
         if "audience_btn" in request.POST:
             user = Vote.objects.filter(user=request.POST["nickname"])
