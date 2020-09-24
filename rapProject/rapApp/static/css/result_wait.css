@@ -91,3 +91,20 @@ body {
   text-align: center;
   color: violet;
 }
+
+.return_btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 36px;
+  border: solid 2px gold;
+  background-color: #D060ED;
+  font-family: "Nexon_B";
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: 0.24px;
+  text-align: center;
+  color: #FFFFFF;
+}

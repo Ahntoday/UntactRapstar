@@ -29,4 +29,4 @@ const countDownTimer = function (id, date) {
     timer = setInterval(showRemaining, 1000);
 }
 
-countDownTimer('limit', '09/25/2020 03:00 AM');
+countDownTimer('limit', '09/25/2020 04:15 AM');

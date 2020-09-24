@@ -82,10 +82,10 @@ body {
 }
 
 .winner_name {
-  width: 100px;
+  width: 300px;
   height: 46px;
-  font-family: "Nexon";
-  font-size: 15px;
+  font-family: "Nexon_B";
+  font-size: 22px;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
